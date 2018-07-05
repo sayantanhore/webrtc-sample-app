@@ -1,6 +1,8 @@
 language: node_js
 node_js: "stable"
-before_install: cd ./backend
-install: npm install
 
-script: npm test
+env:
+  - DIR=backend
+  - DIR=frontend
+
+script: cd $DIR && npm install && npm test
